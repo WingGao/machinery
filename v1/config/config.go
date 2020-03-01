@@ -46,6 +46,7 @@ var (
 		GCPPubSub: &GCPPubSubConfig{
 			Client: nil,
 		},
+		TaskIdPrefix: "task_",
 	}
 
 	reloadDelay = time.Second * 10
@@ -67,6 +68,7 @@ type Config struct {
 	// NoUnixSignals - when set disables signal handling in machinery
 	NoUnixSignals bool            `yaml:"no_unix_signals" envconfig:"NO_UNIX_SIGNALS"`
 	DynamoDB      *DynamoDBConfig `yaml:"dynamodb"`
+	TaskIdPrefix    string `yaml:"task_id_prefix"`
 }
 
 // QueueBindingArgs arguments which are used when binding to the exchange
